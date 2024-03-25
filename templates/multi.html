@@ -1,0 +1,31 @@
+<html lang="en">
+    <head>
+        <title>Battle Arena</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="multi.css"/>    
+    </head>
+    <body  onload="find_battle()">
+
+        <div class="Battle_Title">
+            <h2 class="Battle_arena_title">Challengers</h2>    
+            <div>
+                <button onclick="offer_battle()" class ="BattleButton">Offer a Challenge</button>
+            </div>    
+        </div>
+
+        <div class="DisplayUsername">
+            <h3>{{UserName}}</h3>
+        </div>
+        
+        <div class="logout">
+            <button onclick="logout()" class="logout-button">Log out</button>
+        </div>
+
+        <div class="Challengers_List" >
+            <h3 class="Challengers_title">Active Challenge</h3>   
+        </div>
+
+    </body>
+
+    <script src="static/battle.js"></script>
+</html>

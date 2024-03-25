@@ -2,7 +2,7 @@
     <head>
         <title>Battle Arena</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="static/battle.css"/>    
+        <link rel="stylesheet" type="text/css" href="/static/battle.css"/>    
     </head>
     <body  onload="find_battle()">
         <div class="Battle_Title">
@@ -29,6 +29,10 @@
                     <h3 class="player_hp_info" id="player_hp_info"></h3>
                     <h3 class="player_dmg_info" id="player_dmg_info"></h3>
                 </div>
+                <div class="option">
+                    <button class="attack_button" id="attack_button" onclick="attack()" style="display: none;" value="attack">Attack</button>
+                    <button class="defense_button" id="defense_button" onclick="defend()" style="display: none;" value="defend">Defend</button>
+                </div>
             </div>
 
             <div class="Bot">
@@ -41,20 +45,16 @@
                 </div>
 
             </div>
-
             <div class="result">
                 <h3 id="Result"></h3>
             </div>
-            <div class="option">
-                <button class="attack_button" id="attack_button" onclick="attack()" style="display: none;">Attack</button>
-                <button class="defense_button" id="defense_button" onclick="defend()" style="display: none;">Defend</button>
-            </div>
+
         </div>
         <div class="home">
             <button onclick="home()" class="home-button">Home</button>
             
         </div>
+        <script>setInterval(updatebattle(), 3000);</script>
         <script src="static/battle.js"></script>
-        <script src="static/functions.js"></script>
     </body>
 </html>

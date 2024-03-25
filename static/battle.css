@@ -130,7 +130,11 @@
     left: 50%;
     transform: translateX(-50%);
     bottom:4%;
-    display: inline;
+    display: flex
+}
+.option button{
+    display: inline-block;
+    margin: 0 .5vw;
 }
 .attack_button{
     background-color: rgb(48, 170, 218);

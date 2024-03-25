@@ -137,3 +137,6 @@ async function logout(){
     }
   }
 
+function battle_redirect() {
+    window.location.replace("/battle");
+}

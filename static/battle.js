@@ -26,9 +26,65 @@ async function find_battle(){
         document.getElementById("attack_button").style.display = "block";
         document.getElementById("defense_button").style.display = "block";
         document.getElementById('Result').textContent = content.message;
+    }
+    setTimeout(function() {
+        document.getElementById('Result').textContent = "";
+    }, 2000);
+}
+async function updatebattle(){
+    const response = await fetch("/update_single_battle",{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          'X-Content-Type-Options': 'nosniff'
+        },
+    });
+    const content = await response.json();
+    if (content.mess == "Battle"){
+        phealth = "Health: "+ content.player_health
+        bhealth = "Health: "+ content.bot_health
+        document.getElementById('player_hp_info').textContent = phealth;
+        document.getElementById('bot_hp_info').textContent = bhealth;
+    }else if (content.mess == "You Lose, Bot Win"){
+        phealth = "Health: "+ content.player_health
+        bhealth = "Health: "+ content.bot_health
+        document.getElementById('player_hp_info').textContent = phealth;
+        document.getElementById('bot_hp_info').textContent = bhealth;
+        document.getElementById('Result').textContent = content.mess;
+        document.getElementById("attack_button").style.display = "none";
+        document.getElementById("defense_button").style.display = "none";
         setTimeout(function() {
             document.getElementById('Result').textContent = "";
-        }, 3500);
+            document.getElementById('UserName').textContent = "";
+            document.getElementById('Player_Image_ID').src = "";
+            document.getElementById('player_hp_info').textContent = "";
+            document.getElementById('player_dmg_info').textContent = "";
+            
+            document.getElementById('BotName').textContent = "";
+            document.getElementById('Bot_Image_ID').src = "";        
+            document.getElementById('bot_hp_info').textContent = "";
+            document.getElementById('bot_dmg_info').textContent = "";
+        }, 2000);
+    }else if (content.mess =="You Win"){
+        phealth = "Health: "+ content.player_health
+        bhealth = "Health: "+ content.bot_health
+        document.getElementById('player_hp_info').textContent = phealth;
+        document.getElementById('bot_hp_info').textContent = bhealth;
+        document.getElementById('Result').textContent = content.mess;
+        document.getElementById("attack_button").style.display = "none";
+        document.getElementById("defense_button").style.display = "none";
+        setTimeout(function(){
+            document.getElementById('Result').textContent = "";
+            document.getElementById('UserName').textContent = "";
+            document.getElementById('Player_Image_ID').src = "";
+            document.getElementById('player_hp_info').textContent = "";
+            document.getElementById('player_dmg_info').textContent = "";
+            
+            document.getElementById('BotName').textContent = "";
+            document.getElementById('Bot_Image_ID').src = "";        
+            document.getElementById('bot_hp_info').textContent = "";
+            document.getElementById('bot_dmg_info').textContent = "";
+        }, 2000);
     }
 }
 
@@ -66,9 +122,57 @@ async function generate_battle(){
         document.getElementById('Result').textContent = content.message;
         setTimeout(function() {
             document.getElementById('Result').textContent = "";
-        }, 3500);
+        }, 3000);
     }
 }
-async function home(){
-    window.location.replace("/home")  
+function home(){
+    window.location.replace("/home");
+}
+
+async function attack(){
+    const input = document.getElementById('attack_button').value
+    const response = await fetch("/single_battle_gameplay",{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          'X-Content-Type-Options': 'nosniff'
+        },
+        body: JSON.stringify({
+            "input":input,
+          })
+    });
+    const content = await response.json();
+    document.getElementById('Result').textContent = content.message;
+    updatebattle();
+}
+async function defend(){
+    const input = document.getElementById('defense_button').value
+    const response = await fetch("/single_battle_gameplay",{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          'X-Content-Type-Options': 'nosniff'
+        },
+        body: JSON.stringify({
+            "input":input,
+          })
+    });
+    const content = await response.json();
+    document.getElementById('Result').textContent = content.message;
+    updatebattle();
+}
+async function logout(){
+    const response = await fetch("/logout",{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        'X-Content-Type-Options': 'nosniff'
+      },
+    });
+    const content = await response.json();
+    console.log(response.json.message)
+    if (content.message == 'Logged Out Successful'){
+      window.location.replace("/");
+      document.getElementById('LogOutMessage').textContent = content.message;
+    }
   }
