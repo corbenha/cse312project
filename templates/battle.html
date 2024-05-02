@@ -1,60 +1,40 @@
+<!-- adding divs creates separation/new lines -->
 <html lang="en">
     <head>
-        <title>Battle Arena</title>
+        <title>Challenger List</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="static/battle.css"/>    
+        <link rel="stylesheet" type="text/css" href="/static/battle.css"/>    
     </head>
-    <body  onload="find_battle()">
+    <body>
+        <div class="Game_Rules">
+            <h3 style="margin: 0;margin-top: 4%;margin-bottom: 2%;font-size: 1.7vw;">Rules</h3>
+                <li style="margin: 0;margin-left: 6%;font-size: 1.3vw;">Click on Add Batlle to Add yourself to the list</li>
+                <li style="margin: 0;margin-left: 6%;font-size: 1.3vw;">Click on other people's Battle to challenge them</li>
+        </div>
+
         <div class="Battle_Title">
-            <h2 class="Battle_arena_title">Battle Arena</h2>    
+            <h2 class="Battle_arena_title">Challenger List</h2>    
             <div>
-                <button onclick="generate_battle()" class ="BattleButton">Click for a Battle</button>
-            </div>    
+                <button onclick="add_battle()" class ="BattleButton">Add Battle</button>
+                <h3 id = "Client_Message" class ="server_message"></h3>
+            </div> 
         </div>
 
         <div class="DisplayUsername">
-            <h3>{{UserName}}</h3>
+            <h3 id="Display_User">{{UserName}}</h3>
         </div>
         
         <div class="logout">
             <button onclick="logout()" class="logout-button">Log out</button>
         </div>
+        
+        <div class = "Challenger_List" id="Challenger_List">
 
-        <div class="Battle_Arena">
-
-            <div class="Player">
-                <h3 class="Player_Username" id="UserName"></h3>
-                <img src="" class="player_image" id="Player_Image_ID"/>
-                <div class="player_info">
-                    <h3 class="player_hp_info" id="player_hp_info"></h3>
-                    <h3 class="player_dmg_info" id="player_dmg_info"></h3>
-                </div>
-            </div>
-
-            <div class="Bot">
-                <h3 class="Bot_Name" id="BotName"></h3>
-                <img src="" class="bot_image" id="Bot_Image_ID"/>
-
-                <div class="bot_info">
-                    <h3 class="bot_hp_info" id="bot_hp_info"></h3>
-                    <h3 class="bot_dmg_info" id="bot_dmg_info"></h3>
-                </div>
-
-            </div>
-
-            <div class="result">
-                <h3 id="Result"></h3>
-            </div>
-            <div class="option">
-                <button class="attack_button" id="attack_button" onclick="attack()" style="display: none;">Attack</button>
-                <button class="defense_button" id="defense_button" onclick="defend()" style="display: none;">Defend</button>
-            </div>
         </div>
+
         <div class="home">
             <button onclick="home()" class="home-button">Home</button>
-            
         </div>
         <script src="static/battle.js"></script>
-        <script src="static/functions.js"></script>
     </body>
 </html>

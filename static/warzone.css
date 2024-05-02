@@ -1,0 +1,162 @@
+.Battle_Title{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.Arena{
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 70vh;
+    width: 70vw;
+    display: flex;
+}
+.player1{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+.player1_detail{
+    display: flex;
+    position: relative;
+    width: 40%;
+    height: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.player1_profile{
+    position: relative;
+    top: 28%;
+}
+.player1_char_image{
+    position: relative;
+    justify-content: center;
+    width: 44%;
+    height: auto;
+    top:2%;
+}
+.player1char_detail{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    font-size: 1.4vw;
+}
+.player1char_detail > p {
+    margin-right: 4%;
+}
+.player1_buttons{
+    position: relative;
+    bottom: 2.5%;
+}
+.attack_button{
+    background-color: rgb(48, 170, 218);
+    border: none;
+    color: white;
+    border-radius: 4vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vh;
+    margin-right: 10%;
+}
+.defense_button{
+    background-color: rgb(48, 170, 218);
+    border: none;
+    color: white;
+    border-radius: 4vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vh;
+    margin-right: 3%;
+}
+
+.player2{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+.player2_profile{
+    position: relative;
+    top: 28%;
+}
+.player2_detail{
+    display: flex;
+    position: relative;
+    width: 40%;
+    height: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.player2_char_image{
+    position: relative;
+    width: 44%;
+    height: auto;
+    top:2%;
+}
+.player2char_detail{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    font-size: 1.4vw;
+}
+.player2char_detail > p {
+    margin-right: 4%;
+}
+.player2_buttons{
+    position: relative;
+    bottom: 2.5%;
+}
+.logout-button{
+    position: fixed;
+    background-color: rgb(214, 24, 24);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 25px;
+    width: 6vw;
+    height: 4vh;
+    font-size: 2vh;
+    bottom: 6vh;
+    right: 2vw;
+}
+.DisplayUsername{
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    font-size: 2vh;
+    right: 2vw;
+}
+.forfeit-button{
+    position: absolute;
+    top: 6vh;
+    right: 1vw;
+    font-size: 1.4vw;
+    width: 6vw;
+    height: 2.8vh;
+    background-color: rgb(48, 170, 218);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 1vw;
+}
+.Server_Mess{
+    font-size: 1.4vw;
+    text-align: center;
+    position: relative;
+    top: 8.5%;
+}
+.round_text{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top:80%;
+    font-size: 2.5vw;
+}
+.Game_Rules{
+    position: absolute;
+    left: 1%;
+    top: 3%;
+    width: 25%;
+}

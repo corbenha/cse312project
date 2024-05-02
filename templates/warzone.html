@@ -1,0 +1,80 @@
+<html lang="en">
+    <head>
+        <title>Battle Arena</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/static/warzone.css"/>    
+    </head>
+
+    <body onload="get_battle()">
+        <div class="Game_Rules">
+            <h3 style="margin: 0;margin-top: 4%;margin-bottom: 2%;font-size: 1.7vw;">Rules</h3>
+                <li style="margin: 0;margin-left: 6%;font-size: 1.3vw;">Battle to the Death</li>
+                <li style="margin: 0;margin-left: 6%;font-size: 1.3vw;">You have 60 seconds to make a move</li>
+                <li style="margin: 0;margin-left: 6%;font-size: 1.3vw;">If you fail to make a move, you lose</li>
+                <li style="margin: 0;margin-left: 6%;font-size: 1.3vw;">If both players Die no one Win</li>
+        </div>
+        <div class="DisplayUsername">
+            <h3 id="Display_User" >{{UserName}}</h3>
+            <button class="forfeit-button" onclick="forfeit()">Forfeit</button>
+        </div>
+
+        <div class="Battle_Title">
+            <h1 class="Battle_Arena_Title">Battle Arena</h1>
+        </div>
+        
+        <div class="Server_Mess">
+            <p id="Server_Mess1"></p>
+            <p id="Server_Mess2"></p>
+        </div>
+        <h3 class="round_text" id="round_num"></h3>
+        <div class="Arena">
+
+            <div class="player1">
+
+                <div class="player1_detail">
+                    <img class="player1_profile" id="player1_profile" src="">
+                    <h2 id="player1_name"></h2>
+                </div>
+
+                <img class="player1_char_image" id="player1_char_image" src="">
+
+                <div class="player1char_detail">
+                    <p class="player1_health" id="player1_health"></p>
+                    <p class="player1_Damage" id="player1_Damage"></p>
+                </div>
+
+                <div class="player1_buttons">
+                    <button class="attack_button" id="p1_attack_button" onclick="attack('p1')" style="opacity: 0;" disabled>Attack</button>
+                    <button class="defense_button" id="p1_defense_button" onclick="defend('p1')" style="opacity: 0;"  disabled>Defend</button>
+                </div>
+
+            </div>
+            
+            <div class="player2">
+
+                <div class="player2_detail">
+                    <img class="player2_profile" id="player2_profile" src="">
+                    <h2 id="player2_name"></h2>
+                </div>
+
+                <img class="player2_char_image" id="player2_char_image" src="">
+
+                <div class="player2char_detail">
+                    <p class="player2_health" id="player2_health"></p>
+                    <p class="player2_Damage" id="player2_Damage"></p>
+                </div>
+
+                <div class="player2_buttons">
+                    <button class="attack_button" id="p2_attack_button" onclick="attack('p2')" style="opacity: 0;" disabled>Attack</button>
+                    <button class="defense_button" id="p2_defense_button" onclick="defend('p2')" style="opacity: 0;"  disabled>Defend</button>
+                </div>
+
+            </div>
+
+            <input type="hidden" id="match_id" value="game_id">
+        </div>
+
+    </body>
+    <script src="static/warzone.js"></script>
+
+</html>

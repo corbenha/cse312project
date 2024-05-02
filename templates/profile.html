@@ -1,0 +1,33 @@
+<html lang="en">
+    <head>
+        <title>Profile</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/static/profile.css"/>    
+    </head>
+    <body>
+        <div class="profile-box">
+
+            <div class="DisplayUsername">
+                <h3>{{UserName}}</h3>        
+            </div>
+
+            <div class="circular--portrait"> 
+                <img src={{profile}} id="user_profile_image"> 
+            </div>
+
+            <div class ="image-upload">
+                <form action="/profile-pic" method="post" enctype="multipart/form-data">
+                    <input type="file" name="user_image">
+                    <input type="submit" value="upload" class="upload_button">
+                </form>
+            </div>
+            <p class="error-message">{{error}}</p>
+
+        </div>
+
+        <button onclick="logout()" class="logout-button">Log out</button>
+        <button onclick="home_redirect()" class="home-button">Home</button>
+    </body>
+
+    <script src="static/profile.js"></script>
+</html>

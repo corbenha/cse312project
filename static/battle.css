@@ -3,10 +3,12 @@
     left: 50%;
     transform: translateX(-50%);
     top: -2vh;
+    width: 30vw;
 }
 .Battle_arena_title{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 5vh;
+    text-align: center;
 }
 .BattleButton{
     position: absolute;
@@ -23,8 +25,8 @@
     top: 11vh
 }
 .logout-button{
-    position: absolute;
-    background-color: rgb(48, 170, 218);
+    position: fixed;
+    background-color: rgb(214, 24, 24);
     border: none;
     color: white;
     cursor: pointer;
@@ -32,7 +34,7 @@
     width: 6vw;
     height: 4vh;
     font-size: 2vh;
-    top: 6vh;
+    bottom: 6vh;
     right: 2vw;
 }
 .DisplayUsername{
@@ -130,7 +132,11 @@
     left: 50%;
     transform: translateX(-50%);
     bottom:4%;
-    display: inline;
+    display: flex
+}
+.option button{
+    display: inline-block;
+    margin: 0 .5vw;
 }
 .attack_button{
     background-color: rgb(48, 170, 218);
@@ -152,7 +158,7 @@
 }
 .home-button{
     position: fixed;
-    background-color: rgb(30, 214, 24);
+    background-color: rgb(48, 170, 218);
     border: none;
     color: white;
     cursor: pointer;
@@ -161,5 +167,75 @@
     height: 4vh;
     font-size: 2vh;
     bottom: 6vh;
-    right: 2vw;
+    left: 2vw;
+}
+
+.server_message{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 14vh;
+    display: inline;
+}
+.Challenger_List{
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 70%;
+    border: 2px solid black;
+    scroll-behavior: smooth;
+    overflow:auto;
+    border-radius: 1vw;;
+}
+.challengers{
+    display: flex;
+    height: 3.5vh;
+    font-size: 1.5vw;
+    margin-left: 3%;
+}
+.challengers_battle_button{
+    font-size: 1.4vw;
+    width: 5vw;
+    height: 2.5vh;
+    position: absolute;
+    background-color: rgb(48, 170, 218);
+    border: none;
+    color: white;
+    right:1vw;
+    margin-top: 4%;
+    border-radius: 1vw;
+    padding-top: -5%;
+    cursor: pointer;
+}
+.On_Going_button{
+    font-size: 1.4vw;
+    width: 11.5vw;
+    height: 2.5vh;
+    position: absolute;
+    background-color: rgb(48, 170, 218);
+    border: none;
+    color: white;
+    right:1vw;
+    margin-top: 4%;
+    border-radius: 1vw;
+    padding-top: -5%;
+}
+.Challenger_name{
+    margin-bottom: 10%;
+}
+.player1_profile{
+    position: relative;
+    top: 62%;
+}
+.player2_profile{
+    position: relative;
+    top: 62%;
+}
+.Game_Rules{
+    position: absolute;
+    left: 1%;
+    top: 2%;
+    width: 29%;
 }

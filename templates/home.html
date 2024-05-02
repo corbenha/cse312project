@@ -1,60 +1,50 @@
 <!-- adding divs creates separation/new lines -->
 <html lang="en">
-<head>
-    <title>Code Crusaders</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/static/home.css"/>    
-    
-</head>
+    <head>
+        <title>Code Crusaders</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/static/home.css"/>    
+    </head>
 
-<body onload="welcome();">
+    <body onload="welcome();">
+        <div class="header">
+            <h2>Conversation Room</h2>
+            <div class="profile">
+                <h3 class="username">{{UserName}}</h3>        
+                <img src="{{profile}}" class="profile_image">
+            </div>
+            <div class="header_buttons">
+                <button onclick="battle_redirect()" class="battle-button">Battle</button>
+                <button onclick="profile_redirect()" class="profile-button">Profile</button>   
+            </div>
+        </div>
 
-    <div class="header">
-                
-        <h2>-<u>Code Crusaders App</u>-</h2>
-        <button onclick="randomText()" class ="randomfactbutton">Click for random Crusader fact!</button>
-        <div class="crusader-fact">
-            
-            <p id="randomText" class="Randomfacttext" placeholder="fact"></p>
-        </div>    
-        <div class="DisplayUsername">
-            <h3>{{UserName}}</h3>        
+        <div class="userListContainer">
+            <h3 style="margin: 3%;"><u>Online</u></h3>
+            <div id="onlineList">
+            </div>
         </div>
-        <div class="profile_thumbnail">
-                <img id="profileImage" src="static/crusader.jpg"  class="profile_image"/>
-        </div>    
-        <div>
-            <button onclick="battle()" class="battle-button">Battle a Bot</button>
+
+        <div class="leaderboard">
+            <h3 style="margin: 3%;"><u>Leaderboard</u></h3>
+            <div id="leaderboard_list">
+            </div>
         </div>
-            
-    </div>
-    <div class="userListContainer">
-        <u><b>User List</b></u>
-        <!-- <h4><small>{{userList}}</small></h4> -->
-        <div id="userList"></div>
-    </div>   
-    <div class="Contents">
-        <div class ="chat"> 
-            <div id="chat-messages"></div>      
-            <div class="chat-form">                    
-                <button id="chat-button" onclick="sendChat()">Send Message</button>
-                <input id="chat-text-box" type="text" size="50" placeholder="Send a Message">
-                <br>
-                <button id="battle-button" onclick="requestBattle()">Request Battle</button>
-                <input id="battle-chat-text-box" type="text" size="50" placeholder="@ someone">
-            </div>  
+
+        <div class="Contents" id="chat-messages">
         </div>
-        <div class="profile">
-            <u><b>Profile</b></u>
-            <div id="Experience">Experience Level: {{expLevel}}</div>
-            <div id="Health">Health: {{healthStats}}</div>
-        </div> 
-    </div>
-    <div class="logout">
-        <button onclick="logout()" class="logout-button">Log out</button>
-        
-    </div>
-    <!-- <script src="static/home.js"></script> -->
+
+        <div class="chat-form">                    
+            <button id="chat-button" onclick="sendChat()">Send Message</button>
+            <input id="chat-text-box" type="text" size="50" placeholder="Send a Message">
+        </div>
+
+        <div class="logout">
+            <button onclick="logout()" class="logout-button">Log out</button>
+        </div>
+        <div class="rightside_line"></div>
+    </body>
+
     <script src="static/home.js"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
 </html>
